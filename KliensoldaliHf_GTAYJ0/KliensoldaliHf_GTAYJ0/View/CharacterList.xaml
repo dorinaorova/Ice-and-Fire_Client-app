@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KliensoldaliHf_GTAYJ0.View.CharacterList"
+             Title="Charaters">
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label VerticalOptions="Start"
+                     HeightRequest="150"
+                     Grid.ColumnSpan="2"
+                     HorizontalOptions="FillAndExpand"
+                     HorizontalTextAlignment="Center"
+                     VerticalTextAlignment="Center"
+                     FontSize="40"
+                     FontAttributes="Bold"
+                     TextColor="White"
+                     BackgroundColor="Maroon"
+                     Text="Ice and Fire"/>
+            <Button Grid.Row="1" Text="Houses" Command="{Binding HouseCommand}"  Grid.Column="0" HorizontalOptions="FillAndExpand" Grid.ColumnSpan="1" Margin="5"/>
+            <Button Grid.Row="1" Text="Books" Command="{Binding BookCommand}" Grid.Column="1" HorizontalOptions="FillAndExpand" Grid.ColumnSpan="1" Margin="5"/>
+            <Label  Grid.Row="2" Text="Characters:" FontSize="20" FontAttributes="Bold" Margin="12" Padding="6" BackgroundColor="Maroon" HeightRequest="40" Grid.ColumnSpan="2"/>
+            <ScrollView Grid.Row="3" Grid.ColumnSpan="2">
+                <ListView   ItemsSource="{Binding Characters}" ItemTapped="HandleItemTapped" VerticalOptions="Start" Background="White" Margin="20" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding Name}" TextColor="Black"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

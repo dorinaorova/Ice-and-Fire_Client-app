@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KliensoldaliHf_GTAYJ0.View.CharacterDetails"
+             Title="Character Details">
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label VerticalOptions="Start"
+                     HeightRequest="150"
+                     Grid.ColumnSpan="2"
+                     HorizontalOptions="FillAndExpand"
+                     HorizontalTextAlignment="Center"
+                     VerticalTextAlignment="Center"
+                     FontSize="40"
+                     FontAttributes="Bold"
+                     TextColor="White"
+                     BackgroundColor="Maroon"
+                     Text="{Binding Character.Name}"/>
+            
+            <Button Grid.Row ="1" Grid.ColumnSpan ="2" Text="Back to Character List" Command="{Binding BackCommand}" Margin="20" />
+            <Label Grid.Row="2"  Grid.Column="0" Text="Gender: " TextColor="White" FontAttributes="Bold" FontSize="16" Margin="12"/>
+            <Label Grid.Row="2"  Grid.Column="1" Text="{Binding Character.gender}" TextColor="White" FontSize="16" Margin="12"/>
+            <Label Grid.Row="3"  Grid.Column="0" Text="Culture: " TextColor="White" FontAttributes="Bold" FontSize="16" Margin="12"/>
+            <Label Grid.Row="3"  Grid.Column="1" Text="{Binding Character.culture}" TextColor="White" FontSize="16" Margin="12"/>
+            <Label Grid.Row="4"  Grid.Column="0" Text="Born: " TextColor="White" FontAttributes="Bold" FontSize="16" Margin="12"/>
+            <Label Grid.Row="4"  Grid.Column="1" Text="{Binding Character.born}" TextColor="White" FontSize="16" Margin="12"/>
+            <Label Grid.Row="5"  Grid.Column="0" Text="Titles: " TextColor="White" FontAttributes="Bold" FontSize="16" Margin="12"/>
+            <ScrollView Grid.Row="5" Grid.RowSpan="2" Grid.Column="1" Margin="12">
+                <ListView ItemsSource="{Binding Character.titles}" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding}" TextColor="White"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+            <Label Grid.Row="6" Grid.Column="0" Text="Aliases: " TextColor="White" FontAttributes="Bold" FontSize="16" Margin="12"/>
+            <ScrollView Grid.Row="6" Grid.RowSpan="2" Grid.Column="1" Margin="12">
+                <ListView  ItemsSource="{Binding Character.aliases}" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding}" TextColor="White"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+            <Label Grid.Row="7" Grid.Column="0" Text="Father: " TextColor="White" FontAttributes="Bold" FontSize="16" Margin="12"/>
+            <Label Grid.Row="7"  Grid.Column="1" Text="{Binding Character.FatherChar.Name}" TextColor="White" FontSize="16" Margin="12">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="HandleCharacterTapped" CommandParameter="{Binding Character.FatherChar.Url}"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Grid.Row="8" Grid.Column="0"  Text="Mother: " TextColor="White" FontAttributes="Bold" FontSize="16" Margin="12"/>
+            <Label Grid.Row="8"  Grid.Column="1" Text="{Binding Character.MotherChar.Name}" TextColor="White" FontSize="16" Margin="12">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="HandleCharacterTapped" CommandParameter="{Binding Character.MotherChar.Url}"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Grid.Row="9" Grid.Column="0" Text="Allegiances: " TextColor="White" FontAttributes="Bold" FontSize="16" Margin="12"/>
+            <ScrollView Grid.Row="9" Grid.RowSpan="2" Grid.Column="1" Margin="12">
+                <ListView  ItemsSource="{Binding Character.AllegiancesList}" ItemTapped="HandleHouseItemTapped" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding name}" TextColor="White"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+            <Label Grid.Row="10" Grid.Column="0" Text="Books: " TextColor="White" FontAttributes="Bold" FontSize="16" Margin="12"/>
+            <ScrollView Grid.Row="10" Grid.RowSpan="2" Grid.Column="1" Margin="12">
+                <ListView ItemsSource="{Binding Character.BookList}" ItemTapped="HandleBookItemTapped">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding Name}" TextColor="White"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

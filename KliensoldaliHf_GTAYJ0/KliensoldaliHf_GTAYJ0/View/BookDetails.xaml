@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="KliensoldaliHf_GTAYJ0.BookDetails"
+             Title="Book Details">
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label VerticalOptions="Start"
+                     HeightRequest="150"
+                     Grid.ColumnSpan="2"
+                     HorizontalOptions="FillAndExpand"
+                     HorizontalTextAlignment="Center"
+                     VerticalTextAlignment="Center"
+                     FontSize="40"
+                     FontAttributes="Bold"
+                     TextColor="White"
+                     BackgroundColor="Maroon"
+                     Text="{Binding Book.Name}"/>
+            <Button Grid.Row ="1" Grid.ColumnSpan ="2" Text="Back to Book List" Command="{Binding BackCommand}" Margin="20"/>
+            <Label Grid.Row="2"  Text="Authors: " TextColor="White" FontAttributes="Bold" FontSize="16" Margin="8"/>
+            <ScrollView Grid.Row="2" Grid.RowSpan="2" Grid.Column="1" Margin="12">
+                <ListView ItemsSource="{Binding Book.authors}" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding}" TextColor="White"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+            <Label Grid.Row="3"  Text="Publisher: " TextColor="White" FontAttributes="Bold" FontSize="16" Margin="8"/>
+            <Label Grid.Row="3"  Grid.Column="1" Text="{Binding Book.publisher}" TextColor="White" FontSize="16" Margin="8"/>
+            <Label Grid.Row="4"  Text="Number of Pages: " TextColor="White" FontAttributes="Bold" FontSize="16" Margin="8"/>
+            <Label Grid.Row="4"  Grid.Column="1" Text="{Binding Book.numberOfPages}" TextColor="White" FontSize="16" Margin="8"/>
+            <Label Grid.Row="5"  Text="Characters: " TextColor="White" FontAttributes="Bold" FontSize="16" Margin="8"/>
+            <ScrollView Grid.Row="5" Grid.RowSpan="2" Grid.Column="1" Margin="12">
+                <ListView  ItemsSource="{Binding Book.characterNames}" ItemTapped="HandleCharacterItemTapped">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding Name}" TextColor="White"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

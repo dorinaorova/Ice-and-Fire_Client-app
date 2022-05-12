@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -87,10 +87,10 @@
     <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\KliensoldaliHf_GTAYJ0\KliensoldaliHf_GTAYJ0.csproj">
-      <Project>{C98A6A87-EA10-4E4F-9ADA-A12A6447C95D}</Project>
-      <Name>KliensoldaliHf_GTAYJ0</Name>
+    <ProjectReference Include="..\KliensoldaliHf_GTAYJ0\KliensoldaliHf.csproj">
+      <Project>{F5A54AD6-4141-4252-90A2-E2DAFFBC6452}</Project>
+      <Name>KliensoldaliHf</Name>
     </ProjectReference>
   </ItemGroup>
- <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

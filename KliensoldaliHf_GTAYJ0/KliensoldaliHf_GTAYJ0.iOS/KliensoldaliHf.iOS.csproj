@@ -128,9 +128,9 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\KliensoldaliHf_GTAYJ0\KliensoldaliHf_GTAYJ0.csproj">
-      <Project>{C98A6A87-EA10-4E4F-9ADA-A12A6447C95D}</Project>
-      <Name>KliensoldaliHf_GTAYJ0</Name>
+    <ProjectReference Include="..\KliensoldaliHf_GTAYJ0\KliensoldaliHf.csproj">
+      <Project>{F5A54AD6-4141-4252-90A2-E2DAFFBC6452}</Project>
+      <Name>KliensoldaliHf</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

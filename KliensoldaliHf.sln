@@ -5,11 +5,11 @@ VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KliensoldaliHf_GTAYJ0.UWP", "KliensoldaliHf_GTAYJ0\KliensoldaliHf_GTAYJ0.UWP\KliensoldaliHf_GTAYJ0.UWP.csproj", "{27199538-E497-4910-9CBD-E75629CA8E43}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KliensoldaliHf_GTAYJ0.Android", "KliensoldaliHf_GTAYJ0\KliensoldaliHf_GTAYJ0.Android\KliensoldaliHf_GTAYJ0.Android.csproj", "{95700806-1F0F-4215-A27C-CD89FE2B84BC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KliensoldaliHf.Android", "KliensoldaliHf_GTAYJ0\KliensoldaliHf_GTAYJ0.Android\KliensoldaliHf.Android.csproj", "{95700806-1F0F-4215-A27C-CD89FE2B84BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KliensoldaliHf_GTAYJ0.iOS", "KliensoldaliHf_GTAYJ0\KliensoldaliHf_GTAYJ0.iOS\KliensoldaliHf_GTAYJ0.iOS.csproj", "{EC6B5E7A-6991-4E84-85BF-009E51F5FB70}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KliensoldaliHf.iOS", "KliensoldaliHf_GTAYJ0\KliensoldaliHf_GTAYJ0.iOS\KliensoldaliHf.iOS.csproj", "{EC6B5E7A-6991-4E84-85BF-009E51F5FB70}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KliensoldaliHf_GTAYJ0", "KliensoldaliHf_GTAYJ0\KliensoldaliHf_GTAYJ0\KliensoldaliHf_GTAYJ0.csproj", "{F5A54AD6-4141-4252-90A2-E2DAFFBC6452}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KliensoldaliHf", "KliensoldaliHf_GTAYJ0\KliensoldaliHf_GTAYJ0\KliensoldaliHf.csproj", "{F5A54AD6-4141-4252-90A2-E2DAFFBC6452}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
